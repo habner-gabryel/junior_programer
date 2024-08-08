@@ -37,4 +37,8 @@ public class MenuUIHandler : MonoBehaviour
             Application.Quit();
         #endif
     }
+
+    public void ReturnToMenu() {
+        SceneManager.LoadScene(0);
+    }
 }

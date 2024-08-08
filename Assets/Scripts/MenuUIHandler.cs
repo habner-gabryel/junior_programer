@@ -23,7 +23,7 @@ public class MenuUIHandler : MonoBehaviour
         ColorPicker.onColorChanged += NewColorSelected;
     }
 
-    private void StartNew() {
+    public void StartNew() {
         SceneManager.LoadScene(1);
     }
 }

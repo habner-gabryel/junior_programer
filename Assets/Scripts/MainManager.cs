@@ -19,9 +19,20 @@ public class MainManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
    }
 
-   [System.Serializable]
-    class SaveData
+}
+
+[System.Serializable]
+class SaveData
+{
+    public Color TeamColor;
+
+    public void SaveColor()
     {
-        public Color TeamColor;
+        SaveData data = new SaveData();
+        data.TeamColor = TeamColor;
+
+        string json = JsonUtility.ToJson(data);
+    
+        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
     }
 }

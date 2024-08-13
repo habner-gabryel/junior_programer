@@ -35,7 +35,7 @@ public class MenuUIHandler : MonoBehaviour
 
     public void Exit() {
         MainManager.Instance.SaveColor(); 
-        
+
         #if UNITY_EDITOR
             EditorApplication.ExitPlaymode();
         #else
@@ -45,5 +45,16 @@ public class MenuUIHandler : MonoBehaviour
 
     public void ReturnToMenu() {
         SceneManager.LoadScene(0);
+    }
+
+    public void SaveColorClicked()
+    {
+        MainManager.Instance.SaveColor();
+    }
+
+    public void LoadColorClicked()
+    {
+        MainManager.Instance.LoadColor();
+        ColorPicker.SelectColor(MainManager.Instance.TeamColor);
     }
 }

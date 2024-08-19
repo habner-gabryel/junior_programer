@@ -22,8 +22,7 @@ public class UserControl : MonoBehaviour
 
     private void Update()
     {
-        Vector2 move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        GameCamera.transform.position = GameCamera.transform.position + new Vector3(move.y, 0, -move.x) * PanSpeed * Time.deltaTime;
+        MoveCamera();
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -37,6 +36,11 @@ public class UserControl : MonoBehaviour
         MarkerHandling();
     }
 
+    public void MoveCamera()
+    {
+        Vector2 move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        GameCamera.transform.position = GameCamera.transform.position + new Vector3(move.y, 0, -move.x) * PanSpeed * Time.deltaTime;
+    }
 
     public void HandleSelection ()
     {

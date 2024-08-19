@@ -14,7 +14,13 @@ public class ResourcePile : Building
     public float ProductionSpeed;
     {
         get { return m_ProductionSpeed;}
-        set { m_ProductionSpeed = value;}
+        set { 
+            if(value < 0.0F) {
+                Debug.LogError("You can't set a negative production speed");
+            } else {
+                m_ProductionSpeed = value;
+            }
+        }
     }
     private float m_CurrentProduction = 0.0f;
 
